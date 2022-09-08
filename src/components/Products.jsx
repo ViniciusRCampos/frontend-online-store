@@ -26,7 +26,7 @@ export default class Products extends Component {
   handleClick = async () => {
     const resultAPI = await this.productsAPI();
     const products = resultAPI.results;
-    this.setState({ products, checked: true});
+    this.setState({ products, checked: true });
   };
 
   render() {
