@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import CategoriesList from './CategoriesList';
 import { Link } from 'react-router-dom';
+
 
 export default class Products extends Component {
   state = {
@@ -12,6 +14,8 @@ export default class Products extends Component {
     return (
       <>
         <section>
+          <p>Lista de Categorias</p>
+          <CategoriesList />
           <div>Products</div>
           <label htmlFor="search-products">
             <input
