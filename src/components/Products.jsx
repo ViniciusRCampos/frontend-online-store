@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProductsList from './ProductsList';
+import CategoriesList from './CategoriesList';
 
 export default class Products extends Component {
   state = {
@@ -11,8 +11,8 @@ export default class Products extends Component {
 
     return (
       <section>
-        <p>Lista de Produtos</p>
-        <ProductsList />
+        <p>Lista de Categorias</p>
+        <CategoriesList />
         <div>Products</div>
         <label htmlFor="search-products">
           <input

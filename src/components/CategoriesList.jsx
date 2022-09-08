@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getCategories } from '../services/api';
 
-export default class ProductsList extends Component {
+export default class CategoriesList extends Component {
   state = {
     categories: [],
   };
