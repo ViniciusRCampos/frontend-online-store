@@ -17,6 +17,7 @@ export default class Products extends Component {
     this.setState({ search: value });
   };
 
+  // Puxando resultado da API
   productsAPI = async () => {
     const { category, search } = this.state;
     const result = await getProductsFromCategoryAndQuery(category, search);
