@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProductsList from './ProductsList';
 
 export default class Products extends Component {
   state = {
@@ -10,6 +11,8 @@ export default class Products extends Component {
 
     return (
       <section>
+        <p>Lista de Produtos</p>
+        <ProductsList />
         <div>Products</div>
         <label htmlFor="search-products">
           <input
