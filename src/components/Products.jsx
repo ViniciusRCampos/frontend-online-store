@@ -29,6 +29,12 @@ export default class Products extends Component {
     this.setState({ products, checked: true });
   };
 
+  handleCategoriesList = async (target) => {
+    const data = await getProductsFromCategoryAndQuery(target);
+    const products = data.results;
+    this.setState({ products });
+  };
+
   render() {
     const { products, checked, search } = this.state;
     return (
@@ -62,7 +68,7 @@ export default class Products extends Component {
         </section>
         <section>
           <p>Lista de Categorias</p>
-          <CategoriesList />
+          <CategoriesList handleCategoriesList={ this.handleCategoriesList } />
         </section>
         <section>
           {(!search && !checked) && (
@@ -77,6 +83,7 @@ export default class Products extends Component {
             : (products.map((produtos) => (
               <ProductCard
                 key={ produtos.id }
+                data-testid="product"
                 { ...produtos }
               />
             ))
