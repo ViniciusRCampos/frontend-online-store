@@ -28,7 +28,7 @@ export default class CategoriesList extends Component {
               data-testid="category"
               type="button"
               name={ element.id }
-              // ao chamar a função imediamente recebe-se o valor do objeto. Então é necessário criar uma arrow function
+              // ao chamar a função imediamente recebe-se o valor do objeto. Então é necessário criar uma arrow function.
               onClick={ () => handleCategoriesList(element.id) }
             >
               { element.name }

@@ -29,8 +29,8 @@ export default class Products extends Component {
     this.setState({ products, checked: true });
   };
 
-  handleCategoriesList = async (target) => {
-    const data = await getProductsFromCategoryAndQuery(target);
+  handleCategoriesList = async (value) => {
+    const data = await getProductsFromCategoryAndQuery(value);
     const products = data.results;
     this.setState({ products });
   };
