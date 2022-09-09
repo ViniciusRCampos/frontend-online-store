@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getCategories } from '../services/api';
 
 export default class CategoriesList extends Component {
@@ -17,22 +18,28 @@ export default class CategoriesList extends Component {
 
   render() {
     const { categories } = this.state;
+    const { handleCategoriesList } = this.props;
     return (
       <ul>
         {
           categories.map((element) => (
-            <div key={ element.id }>
-              <button
-                data-testid="category"
-                type="button"
-                name={ element.id }
-              >
-                { element.name }
-              </button>
-            </div>
+            <button
+              key={ element.id }
+              data-testid="category"
+              type="button"
+              name={ element.id }
+              // ao chamar a função imediamente recebe-se o valor do objeto. Então é necessário criar uma arrow function.
+              onClick={ () => handleCategoriesList(element.id) }
+            >
+              { element.name }
+            </button>
           ))
         }
       </ul>
     );
   }
 }
+
+CategoriesList.propTypes = {
+  handleCategoriesList: PropTypes.func.isRequired,
+};
