@@ -4,9 +4,22 @@ import React, { Component } from 'react';
 import { setLocalProducts, getLocalProducts } from '../services/api';
 
 export default class ProductCard extends Component {
-  saveToLocalStorage = (obj) => {
-    const savedProduct = getLocalProducts('produtos') || [];
-    setLocalProducts('produtos', [...savedProduct, obj]);
+  saveToLocalStorage = async ({ target }) => {
+    const idProduct = target.name;
+    const storage = getLocalProducts('produtos') || [];
+    const product = await this.cartItem(idProduct);
+    setLocalProducts('produtos', [...storage, product]);
+  };
+
+  cartItem = () => {
+    const { title, thumbnail, price, id } = this.props;
+    const itemCart = {
+      id,
+      title,
+      thumbnail,
+      price,
+    };
+    return itemCart;
   };
 
   render() {
@@ -28,7 +41,8 @@ export default class ProductCard extends Component {
         <button
           type="button"
           data-testid="product-add-to-cart"
-          onClick={ () => this.saveToLocalStorage() }
+          onClick={ this.saveToLocalStorage }
+          name={ id }
         >
           Adicionar ao carrinho
         </button>
