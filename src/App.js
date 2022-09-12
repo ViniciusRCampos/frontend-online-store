@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home';
 import ShoppingCart from './components/ShoppingCart';
+import Product from './components/Product';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path="/cart" component={ ShoppingCart } />
+          <Route exact path="/product/:id" component={ Product } />
         </Switch>
       </BrowserRouter>
     </section>
