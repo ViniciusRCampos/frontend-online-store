@@ -5,8 +5,8 @@ import { getProductById } from '../services/api';
 
 export default class Product extends Component {
   state = {
-    attributes: [],
     product: '',
+    attributes: [],
   };
 
   componentDidMount() {
