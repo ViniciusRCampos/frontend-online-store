@@ -41,7 +41,6 @@ export default class ShoppingCart extends Component {
     this.setState({ cartItems: itemCart });
   };
 
-
   render() {
     const { cartItems } = this.state;
     return (
@@ -49,7 +48,6 @@ export default class ShoppingCart extends Component {
         { cartItems.length === 0 ? (
           <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         ) : (
-          
           cartItems.map((element) => (
             <div key={ element.id }>
               <h2 data-testid="shopping-cart-product-name">{element.title}</h2>
