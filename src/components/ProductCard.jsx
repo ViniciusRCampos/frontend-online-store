@@ -18,6 +18,7 @@ export default class ProductCard extends Component {
       title,
       thumbnail,
       price,
+      quantity: 1,
     };
     return itemCart;
   };
